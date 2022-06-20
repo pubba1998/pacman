@@ -10,15 +10,15 @@ namespace WinFormsApp1
         bool goright;
 
 
-        int speed = 5;
+        int speed = 6;
 
         //ghost 1 and 2 variables. These guys are sane well sort of
-        int ghost1 = 6;
-        int ghost2 = 6;
-        int ghost3 = 6;
-        int ghost4 = 6;
+        int ghost1 = 3;
+        int ghost2 = 3;
+        int ghost3 = 3;
+        int ghost4 = 3;
 
-       
+
         int score = 0;
 
         public Form1()
@@ -72,14 +72,27 @@ namespace WinFormsApp1
             {
                 pacman.Top -= speed;
                 pacman.Image = Properties.Resources.up;
-                goup=true;
+                goup = true;
             }
             if (e.KeyCode == Keys.Down)
             {
                 pacman.Top += speed;
                 pacman.Image = Properties.Resources.down;
-                godown=true;
+                godown = true;
             }
+            else if (e.KeyCode == Keys.S)
+                timer1.Enabled = true;
+            if (e.KeyCode == Keys.P)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("game stop");
+            }
+            else if (e.KeyCode == Keys.Escape)
+                Close();
+            {
+
+            }
+
             checkWallHit();
         }
         void checkWallHit()
@@ -117,7 +130,7 @@ namespace WinFormsApp1
             }
         }
 
-                private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
@@ -239,26 +252,33 @@ namespace WinFormsApp1
                 //for loop to check walls, ghosts and points
                 foreach (Control x in this.Controls)
                 {
-                    if (x is PictureBox && x.Tag == "wall" || x.Tag == "ghost") ;
+                    if (x is PictureBox && x.Tag == "ghost")
+                        // checking if the player hits the wall or the ghost, then game is over
+                        if (((PictureBox)x).Bounds.IntersectsWith(pacman.Bounds) || score == 85)
+                    {
+                        pacman.Left = 0;
+                        pacman.Top = 25;
+                        label2.Text = "GAME OVER";
+                        label2.Visible = true;
+                        timer1.Stop();
 
+                    }
+                  
+                    {
+
+                    }
                     if (x is PictureBox && x.Tag == "coin")
                     {
                         //checking if the player hits the points picturebox then we can add to the score
                         if (((PictureBox)x).Bounds.IntersectsWith(pacman.Bounds))
                         {
                             this.Controls.Remove(x); //remove that point
-                            score++; // add to the score*/
+                            score++; // add to the score
                         }
                     }
-                    //  }
-
-                    // end of for loop checking walls, points and ghosts. 
-
-                   
                 }
+
             }
         }
     }
-
-
 }

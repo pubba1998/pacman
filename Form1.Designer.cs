@@ -243,7 +243,7 @@
             this.pacman.Image = global::WinFormsApp1.Properties.Resources.left;
             this.pacman.Location = new System.Drawing.Point(26, 36);
             this.pacman.Name = "pacman";
-            this.pacman.Size = new System.Drawing.Size(29, 28);
+            this.pacman.Size = new System.Drawing.Size(29, 27);
             this.pacman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pacman.TabIndex = 0;
             this.pacman.TabStop = false;
@@ -256,7 +256,7 @@
             this.yellowGhost.Image = global::WinFormsApp1.Properties.Resources.ghostyellow;
             this.yellowGhost.Location = new System.Drawing.Point(737, 93);
             this.yellowGhost.Name = "yellowGhost";
-            this.yellowGhost.Size = new System.Drawing.Size(36, 38);
+            this.yellowGhost.Size = new System.Drawing.Size(38, 34);
             this.yellowGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.yellowGhost.TabIndex = 1;
             this.yellowGhost.TabStop = false;
@@ -267,7 +267,7 @@
             this.redGhost.Image = global::WinFormsApp1.Properties.Resources.ghostred;
             this.redGhost.Location = new System.Drawing.Point(108, 170);
             this.redGhost.Name = "redGhost";
-            this.redGhost.Size = new System.Drawing.Size(36, 38);
+            this.redGhost.Size = new System.Drawing.Size(38, 38);
             this.redGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.redGhost.TabIndex = 53;
             this.redGhost.TabStop = false;
@@ -840,9 +840,8 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(579, 388);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 38);
+            this.label2.Size = new System.Drawing.Size(0, 38);
             this.label2.TabIndex = 274;
-            this.label2.Text = "label3";
             this.label2.Click += new System.EventHandler(this.label3_Click);
             // 
             // timer1
